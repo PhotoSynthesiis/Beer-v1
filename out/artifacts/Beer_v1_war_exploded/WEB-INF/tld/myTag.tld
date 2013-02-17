@@ -9,5 +9,5 @@
         <name>rollIt</name>
         <function-class>classes.com.example.model.DiceRoller</function-class>
         <function-signature>int rollDice()</function-signature>
-    </function>
+    </function>                                                 // EL?????
 </taglib>

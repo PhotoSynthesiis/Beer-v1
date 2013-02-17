@@ -9,6 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 public class HobbyServlet extends HttpServlet {
 
@@ -21,8 +23,11 @@ public class HobbyServlet extends HttpServlet {
 
         String[] movies = {"King Lear", "Sky Fall", "古惑仔", "Cloud Altas"};
 
+        Map<String, String> player = new HashMap<String, String>();
+
         request.setAttribute("person", person);
         request.setAttribute("movies", movies);
+        request.setAttribute("player", player);
 
         dispatcher.forward(request, response);
     }

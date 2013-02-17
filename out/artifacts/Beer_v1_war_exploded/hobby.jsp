@@ -3,7 +3,8 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="mine" uri="DiceFunctions" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="my" uri="randomThings" %>
 
 <html>
 <head>
@@ -61,11 +62,36 @@ Now Let's use JSTL :
 <table border="1">
     <c:forEach var="movie" items="${movies}" varStatus="status">
         <tr>
-            <td>${status.count}</td><td>${movie}</td>
+            <td>${status.count}</td>
+            <td>${movie}</td>
         </tr>
     </c:forEach>
 </table>
 
+<br>
+<strong>THIS IS THE VAR IN JSTL</strong> <br>
+I just wanna try set in JSTL :
+<c:set var="name_lucas" scope="request" value="Lucas Podolski"/>
+${name_lucas}
 
+<br>
+I try to use set in JSTL with a body :
+<c:set var="name_persie" scope="request">
+    Robin Van Persie
+</c:set>
+${name_persie}
+
+<br>
+<strong>THIS IS THE TARGET IN JSTL</strong> <br>
+Try setting the map some values with target :
+<c:set target="${player}" property="Arsenal">
+    Per Mertesacker
+</c:set>
+${player.Arsenal}
+
+<br>
+Now give me a chance to user custom tag lib :
+<my:advice user="Qiushi"/>
+<br>
 </body>
 </html>
